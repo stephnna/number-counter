@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Number Counter</title>
+</head>
+<body>
+    <h1>Number Counter</h1>
+    <ul>
+    <!-- Python code starts here -->
+    {% for number in range(1, 1000001) %}
+        {% if number % 10 == 0 %}
+            <li><strong>{{ number }}</strong></li>
+        {% elif number % 3 == 0 %}
+            <li><em>{{ number }}</em></li>
+        {% elif number|is_prime %}
+            <li><u>{{ number }}</u></li>
+        {% else %}
+            <li>{{ number }}</li>
+        {% endif %}
+    {% endfor %}
+    <!-- Python code ends here -->
+    </ul>
+</body>
+</html>
